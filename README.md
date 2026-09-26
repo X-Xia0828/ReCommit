@@ -1,6 +1,6 @@
 # ReCommit
 
-ReCommit is a training-free method for repairing failed tool-using agent attempts. It uses LLaDA to score operation sets, Qwen to generate concrete repair plans, and public execution errors to prune rejected calls.
+ReCommit is a training-free framework for repairing failed tool-using agent attempts. It uses a diffusion language model to guide structured search over repair operations, an autoregressive language model to generate concrete repair plans, and public execution errors to prune rejected calls.
 
 - `src/recommit/`: operation-set scoring, plan generation, and local execution
 - `examples/`: three Linear failure examples
@@ -109,8 +109,8 @@ pytest -q
 
 ## Third-Party Dependencies
 
-- [LLaDA](https://github.com/ML-GSAI/LLaDA) and [LLaDA-8B-Instruct](https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct): operation-set scoring
-- [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B): repair-plan generation
+- [LLaDA](https://github.com/ML-GSAI/LLaDA): upstream diffusion language model implementation
+- [LLaDA-8B-Instruct](https://huggingface.co/GSAI-ML/LLaDA-8B-Instruct) and [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B): pretrained model checkpoints used in the provided example
 - [Agent-Diff](https://github.com/agent-diff-bench/agent-diff): public service interfaces and seed-state resources
 - PyTorch, Transformers, Accelerate, NumPy, and Einops: model dependencies
 
