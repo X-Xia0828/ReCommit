@@ -1,0 +1,31 @@
+[
+  {
+    "failure_id": "linear_0::5498bdbbab1f",
+    "test_id": "linear_0",
+    "question": "Create a new issue in the Engineering team titled 'Fix login bug' ",
+    "raw_output": "{\"calls\":[{\"tool\":\"teams\",\"arguments\":{\"name\":\"Engineering\"}},{\"tool\":\"teamMembershipCreate\",\"arguments\":{\"team_id\":\"1\",\"user_id\":\"1\"}},{\"tool\":\"issues\",\"arguments\":{\"team_id\":\"1\",\"title\":\"Fix login bug\"}}]}",
+    "proposal_tools": [
+      "teams",
+      "teamMembershipCreate",
+      "issues"
+    ]
+  },
+  {
+    "failure_id": "linear_3::b3980dbda53e",
+    "test_id": "linear_3",
+    "question": "Assign issue ENG-2 to John Doe",
+    "raw_output": "{\"calls\":[{\"tool\":\"users\",\"arguments\":{\"query\":\"John Doe\"}}]}",
+    "proposal_tools": [
+      "users"
+    ]
+  },
+  {
+    "failure_id": "linear_6::9150b63312f4",
+    "test_id": "linear_6",
+    "question": "Change the priority of issue ENG-1 to Urgent",
+    "raw_output": "{\"calls\":[{\"tool\":\"issues\",\"arguments\":{\"filter\":\"number:ENG-1\"}}]}",
+    "proposal_tools": [
+      "issues"
+    ]
+  }
+]

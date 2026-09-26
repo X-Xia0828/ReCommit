@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recommit"
+version = "0.1.0"
+description = "Diffusion-guided structured repair for tool-using agents"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+models = ["torch>=2.2", "transformers>=4.51,<5", "accelerate>=0.30", "numpy>=1.24", "einops>=0.7"]
+dev = ["pytest>=8", "ruff>=0.11"]
+
+[project.scripts]
+recommit = "recommit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
